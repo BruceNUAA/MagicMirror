@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/videocapture.dir/main.cpp.o  -o videocapture  -L/usr/local/lib -rdynamic -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_imgcodecs -lopencv_video -lopencv_videoio -lpthread -Wl,-rpath,/usr/local/lib: 

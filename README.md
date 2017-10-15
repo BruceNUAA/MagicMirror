@@ -1,1 +1,1 @@
-# MagicMirror
+# VideoCapture

@@ -1,0 +1,13 @@
+/home/dox/Algorithm/VideoCapture/build/CMakeFiles/install.dir
+/home/dox/Algorithm/VideoCapture/build/CMakeFiles/list_install_components.dir
+/home/dox/Algorithm/VideoCapture/build/CMakeFiles/install/strip.dir
+/home/dox/Algorithm/VideoCapture/build/CMakeFiles/install/local.dir
+/home/dox/Algorithm/VideoCapture/build/CMakeFiles/rebuild_cache.dir
+/home/dox/Algorithm/VideoCapture/build/CMakeFiles/edit_cache.dir
+/home/dox/Algorithm/VideoCapture/build/bin/CMakeFiles/install.dir
+/home/dox/Algorithm/VideoCapture/build/bin/CMakeFiles/list_install_components.dir
+/home/dox/Algorithm/VideoCapture/build/bin/CMakeFiles/rebuild_cache.dir
+/home/dox/Algorithm/VideoCapture/build/bin/CMakeFiles/videocapture.dir
+/home/dox/Algorithm/VideoCapture/build/bin/CMakeFiles/install/local.dir
+/home/dox/Algorithm/VideoCapture/build/bin/CMakeFiles/install/strip.dir
+/home/dox/Algorithm/VideoCapture/build/bin/CMakeFiles/edit_cache.dir
