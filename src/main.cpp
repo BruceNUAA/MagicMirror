@@ -8,6 +8,8 @@ pthread_t pthreadProducter, pthreadConsumer;
 void* ProductFunc(void * pParam);
 void* ConsumerFunc(void * pParam);
 
+void ImageProcess(Mat& );
+
 VideoCapture vpCamera;
 queue<Mat> qmatCameraQueue;
 int nWaitKey = -1;
@@ -23,7 +25,7 @@ int main(int argc, char **argv) {
         exit(-1);
     }
     
-    vpCamera.set(CV_CAP_PROP_FRAME_WIDTH, 1280);
+    vpCamera.set(CV_CAP_PROP_FRAME_WIDTH, 960);
     vpCamera.set(CV_CAP_PROP_FRAME_HEIGHT, 720);  
     
     int nDevNum = 0;
@@ -107,6 +109,11 @@ void* ConsumerFunc(void * pParam){
         
         Mat matCameraFrame = qmatCameraQueue.front();
         qmatCameraQueue.pop();
+        double dCurrentImageProcessTime = (double)getTickCount();
+        ImageProcess(matCameraFrame);
+        double dImageProcessTime = ((double)getTickCount() - dCurrentImageProcessTime) / getTickFrequency();
+        cout << "Image process time is:" << dImageProcessTime <<endl;
+        cout << "The image size is " << matCameraFrame.cols << "*" <<  matCameraFrame.rows << endl;
         
         double dCurrentProcessTime = (double)(getTickCount());
         double dProcessTime = (dCurrentProcessTime - dPreProcessTime) / getTickFrequency();
@@ -121,5 +128,25 @@ void* ConsumerFunc(void * pParam){
     }
 
     cout << "Consumer function end!" << endl;
+    
+}
+
+void ImageProcess(Mat& matSrcImage){
+    if(matSrcImage.empty()){
+        cerr << "Input image of ImageProcess function is empty!" << endl;
+        exit(-1);
+    }
+    
+    flip(matSrcImage, matSrcImage, 1);
+    matSrcImage = matSrcImage(Rect((matSrcImage.cols - 640) /2,
+                                   (matSrcImage.rows - 720) /2,
+                                   640,
+                                   720
+    ));
+    
+    //medianBlur(matSrcImage, matSrcImage, 3);
+    //GaussianBlur(matSrcImage, matSrcImage, Size(3, 3), 0.0, 0.0 );
+    
+    
     
 }
